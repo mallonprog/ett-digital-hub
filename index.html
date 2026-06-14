@@ -3,17 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETT Digital Hub</title>
+    <title>ELECTRIC TIGER TATTOO | Brutalist Noir</title>
     <style>
-        body { background: #000; color: #fff; font-family: monospace; padding: 20px; }
-        h1 { border: 2px solid #fff; padding: 10px; text-transform: uppercase; }
-        section { border: 1px solid #333; margin: 20px 0; padding: 15px; }
+        :root {
+            --bg: #0a0a0a;
+            --text: #e0e0e0;
+            --accent: #008080; /* Cedarway Teal */
+            --blackletter: 'Cloister Black', 'UnifrakturMaguntia', serif;
+            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@400;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--sans);
+            line-height: 1.2;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'UnifrakturMaguntia', serif;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 8px solid var(--text);
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 15vw, 12rem);
+            line-height: 0.8;
+            margin-bottom: 2rem;
+            animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .hero-title span {
+            display: block;
+            color: var(--accent);
+        }
+
+        .cta-box {
+            border: 4px solid var(--text);
+            padding: 1.5rem;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 900;
+            transition: all 0.1s ease;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .cta-box:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        /* Studio Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .info-card {
+            border: 2px solid var(--text);
+            padding: 2rem;
+        }
+
+        .info-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* Works Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 4rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'UnifrakturMaguntia';
+            font-size: 2rem;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: scale(0.98);
+        }
+
+        footer {
+            margin-top: 8rem;
+            padding-bottom: 4rem;
+            border-top: 8px solid var(--text);
+            padding-top: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            font-weight: 900;
+        }
+
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        @keyframes reveal {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .gallery { grid-template-columns: 1fr; }
+            .hero-title { font-size: 5rem; }
+        }
     </style>
 </head>
 <body>
-    <h1>ETT Digital Hub</h1>
-    <section id="hero"><h2>Hero</h2></section>
-    <section id="gallery"><h2>Gallery</h2></section>
-    <section id="booking"><h2>Booking</h2></section>
+    <div class="container">
+        <header>
+            <h1 class="hero-title">ELECTRIC<br>TIGER<span>TATTOO</span></h1>
+            <a href="mailto:electrictigertattoo.de@gmail.com" class="cta-box">INQUIRIES & BOOKING</a>
+        </header>
+
+        <section class="info-grid">
+            <div class="info-card">
+                <h3>THE ARTIST</h3>
+                <p>Mollee Marston</p>
+                <p>Tattoo Artist & Piercer</p>
+                <p>American Traditional / Fine-line Script / Blackletter</p>
+            </div>
+            <div class="info-card">
+                <h3>LOCATION</h3>
+                <p>19972 Church St</p>
+                <p>Rehoboth Beach, Delaware</p>
+            </div>
+            <div class="info-card">
+                <h3>HOURS</h3>
+                <p>Tue - Sun</p>
+                <p>12:00 PM - 8:00 PM</p>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <div class="gallery-item">HALF DOOMED</div>
+            <div class="gallery-item">SEMI SWEET</div>
+            <div class="gallery-item">FAITH</div>
+            <div class="gallery-item">BLACKLETTER</div>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="https://instagram.com/dusk.ap" target="_blank">INSTAGRAM @DUSK.AP</a>
+                <a href="mailto:electrictigertattoo.de@gmail.com">EMAIL</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
 </body>
 </html>
