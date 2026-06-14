@@ -9,7 +9,7 @@
             --bg: #121212;
             --text: #e0e0e0;
             --accent: #e0e0e0;
-            --secondary: #1a1a1a;
+            --secondary: #161616;
             --border: #333333;
             --blackletter: 'UnifrakturMaguntia', serif;
             --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -45,8 +45,8 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 1rem;
-            border-left: 2px solid var(--border);
-            border-right: 2px solid var(--border);
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
         }
 
         header {
@@ -54,7 +54,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            border-bottom: 2px solid var(--border);
+            border-bottom: 1px solid var(--border);
             padding: 2rem 0;
         }
 
@@ -76,7 +76,7 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            border-left: 2px solid var(--accent);
+            border-left: 1px solid var(--accent);
             padding-left: 1rem;
             font-size: 1rem;
             max-width: 500px;
@@ -84,13 +84,13 @@
 
         .cta-box {
             margin-top: 2rem;
-            border: 2px solid var(--accent);
+            border: 1px solid var(--accent);
             padding: 1rem 2rem;
             display: inline-block;
             text-decoration: none;
             color: var(--accent);
             font-weight: 900;
-            transition: all 0.1s steps(2);
+            transition: all 0.2s ease;
             text-transform: uppercase;
             background: transparent;
         }
@@ -98,18 +98,16 @@
         .cta-box:hover {
             background: var(--accent);
             color: var(--bg);
-            box-shadow: 4px 4px 0 #333;
-            transform: translate(-2px, -2px);
         }
 
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            border-bottom: 2px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
         .info-card {
-            border-right: 2px solid var(--border);
+            border-right: 1px solid var(--border);
             padding: 2rem 1.5rem;
         }
 
@@ -137,7 +135,7 @@
             aspect-ratio: 1;
             border: 1px solid var(--border);
             overflow: hidden;
-            background: #1a1a1a;
+            background: var(--secondary);
         }
 
         .gallery-item img {
@@ -145,7 +143,7 @@
             height: 100%;
             object-fit: cover;
             filter: grayscale(1) brightness(0.8);
-            transition: filter 0.3s ease, transform 0.5s ease;
+            transition: filter 0.4s ease, transform 0.6s ease;
         }
 
         .gallery-item:hover img { 
@@ -160,9 +158,9 @@
             width: 100%;
             padding: 1rem;
             background: var(--bg);
-            border-top: 2px solid var(--border);
+            border-top: 1px solid var(--border);
             transform: translateY(100%);
-            transition: transform 0.2s steps(4);
+            transition: transform 0.3s ease;
             z-index: 2;
         }
 
@@ -178,9 +176,9 @@
         }
 
         .review-card {
-            border: 2px solid var(--border);
+            border: 1px solid var(--border);
             padding: 1.5rem;
-            background: #161616;
+            background: var(--secondary);
         }
 
         .review-text { font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; font-style: italic; }
@@ -189,7 +187,7 @@
         footer {
             margin-top: 4rem;
             padding: 3rem 0 8rem 0;
-            border-top: 2px solid var(--border);
+            border-top: 1px solid var(--border);
         }
 
         .footer-links {
@@ -241,83 +239,83 @@
         <h2 class="section-header">TATTOOS</h2>
         <section class="gallery">
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/21c0b2ed-be48-5e93-b32b-911ffb10e99a" alt="Sea Turtle/Butterfly">
+                <img src="images/sea-turtle-butterfly.png" alt="Sea Turtle/Butterfly">
                 <div class="item-overlay"><span class="item-label">Liz & Mhylene</span><span class="item-sub">Matching Work</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/47501090-715b-5cc1-932e-7919a98eb89e" alt="Archangel Michael">
+                <img src="images/archangel.png" alt="Archangel Michael">
                 <div class="item-overlay"><span class="item-label">Michael</span><span class="item-sub">Black & Grey Forearm</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/ba7f3258-74e2-5837-bfc1-24da6ae0cd41" alt="Hopper Rabbit">
+                <img src="images/hopper-rabbit.png" alt="Hopper Rabbit">
                 <div class="item-overlay"><span class="item-label">HOPPER</span><span class="item-sub">Traditional Rabbit</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/42c76e07-4d1b-5e33-bb4b-c3fd84713be2" alt="Cherry Blossom">
+                <img src="images/cherry-blossom.png" alt="Cherry Blossom">
                 <div class="item-overlay"><span class="item-label">Blossom</span><span class="item-sub">Upper Arm</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/b3efcef8-5c0b-5e21-b05d-d71a0ae9a099" alt="Grenade">
+                <img src="images/grenade.png" alt="Grenade">
                 <div class="item-overlay"><span class="item-label">Grenade Pin</span><span class="item-sub">Smiley Detail</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/cb7d136a-26a2-5716-be95-85f5268e69d5" alt="Dragons/Books">
+                <img src="images/dragons-books.png" alt="Dragons/Books">
                 <div class="item-overlay"><span class="item-label">Mystic Library</span><span class="item-sub">Dragons & Books</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/3490fb4e-c329-5071-ae9f-f32099f876f3" alt="Sea Turtle">
+                <img src="images/sea-turtle.png" alt="Sea Turtle">
                 <div class="item-overlay"><span class="item-label">The Storm</span><span class="item-sub">Stippling Work</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/2f08f314-fcc3-5016-ac4e-ab427ac9f400" alt="Gothic Font">
+                <img src="images/gothic-font.png" alt="Gothic Font">
                 <div class="item-overlay"><span class="item-label">Them</span><span class="item-sub">Gothic Leg Work</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/fc56ba15-4d20-55b8-aa7e-1ce3c1ae6287" alt="Tuna Fish">
+                <img src="images/tuna-fish.png" alt="Tuna Fish">
                 <div class="item-overlay"><span class="item-label">Tuna Fish</span><span class="item-sub">Thigh Color</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/39747abf-b878-598e-97dc-ef285576fdc0" alt="Serenity Prayer">
+                <img src="images/serenity-prayer.png" alt="Serenity Prayer">
                 <div class="item-overlay"><span class="item-label">Serenity</span><span class="item-sub">Back Script</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/eafe7cc8-b454-5a89-8d1f-3311fa1c1b90" alt="Red Cardinal">
+                <img src="images/red-cardinal.png" alt="Red Cardinal">
                 <div class="item-overlay"><span class="item-label">Cardinal</span><span class="item-sub">Forearm Realistic</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/f562f491-69a9-5496-9735-16b085103321" alt="Tropical Sunset">
+                <img src="images/tropical-sunset.png" alt="Tropical Sunset">
                 <div class="item-overlay"><span class="item-label">Sunset</span><span class="item-sub">B&G Sleeve</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/11aa661c-ce17-5f63-b94b-b70545007daf" alt="Grim Reaper">
+                <img src="images/grim-reaper.png" alt="Grim Reaper">
                 <div class="item-overlay"><span class="item-label">Reaper</span><span class="item-sub">Skull & Scythe</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/48419927-340c-5079-b169-a6fb74b9b8c0" alt="Hibiscus">
+                <img src="images/hibiscus.png" alt="Hibiscus">
                 <div class="item-overlay"><span class="item-label">Hibiscus</span><span class="item-sub">Inner Arm B&G</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/ddc0ae0f-e65e-5efd-9525-83a429cfa071" alt="Jellyfish">
+                <img src="images/jellyfish.png" alt="Jellyfish">
                 <div class="item-overlay"><span class="item-label">Medusa</span><span class="item-sub">Color Jellyfish</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/c221748a-38de-56ae-a910-4523af563302" alt="Dog Portrait">
+                <img src="images/dog-portrait.png" alt="Dog Portrait">
                 <div class="item-overlay"><span class="item-label">Chihuahua</span><span class="item-sub">Detailed Portrait</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/e9165b8a-1edd-5904-807c-35cb30f30777" alt="Bird of Prey">
+                <img src="images/bird-of-prey.png" alt="Bird of Prey">
                 <div class="item-overlay"><span class="item-label">Hawk Rising</span><span class="item-sub">Upper Back</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/1f4553be-110d-5534-8c18-57704d4fdf57" alt="Memorial Cross">
+                <img src="images/memorial-cross.png" alt="Memorial Cross">
                 <div class="item-overlay"><span class="item-label">Dad</span><span class="item-sub">Memorial Cross</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/e27b8a34-abc4-5a7d-96bf-51032bbf6f7c" alt="Eyeball Creature">
+                <img src="images/eyeball-creature.png" alt="Eyeball Creature">
                 <div class="item-overlay"><span class="item-label">The Eye</span><span class="item-sub">Winged Eyeball</span></div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/06e09a38-52e4-5f40-982e-3a0ede386b5b" alt="Feline Skull">
+                <img src="images/feline-skull.png" alt="Feline Skull">
                 <div class="item-overlay"><span class="item-label">Remains</span><span class="item-sub">Skull & Flowers</span></div>
             </div>
         </section>
