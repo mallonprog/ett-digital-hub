@@ -215,13 +215,14 @@
             .container { border: none; }
         }
     </style>
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
             <h1 class="hero-title">MOLLEE<span>MARSTON</span></h1>
             <p class="residency-tag">Tattoo Artist & Piercer — Resident at Electric Tiger Tattoo, Rehoboth Beach, DE.</p>
-            <a href="#booking" class="cta-box">BOOKING / INQUIRIES</a>
+            <a href="#booking" class="cta-box analytics-booking">BOOKING / INQUIRIES</a>
         </header>
 
         <section class="info-grid">
@@ -301,12 +302,20 @@
         <footer id="booking">
             <h2 class="section-header">BOOKING / CONTACT</h2>
             <div class="footer-links">
-                <div><span class="booking-label">EMAIL</span><p><a href="mailto:mollee.marston@tattoomollee.com">mollee.marston@tattoomollee.com</a></p></div>
+                <div><span class="booking-label">EMAIL</span><p><a href="mailto:mollee.marston@tattoomollee.com" class="analytics-booking">mollee.marston@tattoomollee.com</a></p></div>
                 <div><span class="booking-label">INSTAGRAM</span><p><a href="https://instagram.com/dawgbedd" target="_blank">@DAWGBEDD</a></p></div>
                 <div><span class="booking-label">TEXT</span><p>410-497-7137</p></div>
                 <div><span class="booking-label">SHOP LINE</span><p>302-226-1138 (Ask for Mollee)</p></div>
             </div>
         </footer>
     </div>
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        document.querySelectorAll('.analytics-booking').forEach(element => {
+            element.addEventListener('click', () => {
+                window.va('event', { name: 'booking_click', data: { type: element.tagName === 'A' && element.href.startsWith('mailto') ? 'email' : 'button' } });
+            });
+        });
+    </script>
 </body>
 </html>
