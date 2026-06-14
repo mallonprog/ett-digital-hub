@@ -57,16 +57,16 @@
 
         /* Hero Section */
         header {
-            min-height: 70svh;
+            min-height: 60svh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             border-bottom: 12px solid var(--border);
-            padding: 4rem 0;
+            padding: 3rem 0;
         }
 
         .hero-title {
-            font-size: clamp(3.5rem, 18vw, 14rem);
+            font-size: clamp(3rem, 15vw, 12rem);
             line-height: 0.8;
             margin-bottom: 2rem;
         }
@@ -87,13 +87,13 @@
             max-width: 600px;
             border-left: 10px solid var(--accent);
             padding-left: 1.5rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .cta-box {
-            margin-top: 3rem;
+            margin-top: 2rem;
             border: 6px solid var(--border);
-            padding: 2rem 4rem;
+            padding: 1.5rem 3rem;
             display: inline-block;
             text-decoration: none;
             color: var(--text);
@@ -103,7 +103,7 @@
             cursor: pointer;
             width: fit-content;
             text-transform: uppercase;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .cta-box:hover {
@@ -116,14 +116,14 @@
         /* Information Grid */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 0;
             border-bottom: 2px solid var(--border);
         }
 
         .info-card {
             border-right: 2px solid var(--border);
-            padding: 4rem 2rem;
+            padding: 2rem;
         }
 
         .info-card:last-child {
@@ -131,31 +131,31 @@
         }
 
         .info-card h3 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             text-decoration: underline;
         }
 
         .info-card p {
             font-weight: 900;
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
         }
 
         /* Gallery */
         .gallery-header {
-            font-size: 5rem;
-            margin: 4rem 0 0 0;
+            font-size: 3rem;
+            margin: 2rem 0 0 0;
             background: var(--text);
             color: var(--bg);
-            padding: 1rem;
+            padding: 0.8rem;
             width: 100%;
             display: block;
         }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
             gap: 0;
             border: 2px solid var(--border);
         }
@@ -189,7 +189,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 1.2rem;
+            padding: 1rem;
             background: var(--bg);
             border-top: 4px solid var(--border);
             transform: translateY(100%);
@@ -202,13 +202,13 @@
 
         .item-label {
             font-family: var(--blackletter);
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             display: block;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.1rem;
         }
 
         .item-sub {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             font-weight: 900;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -216,26 +216,26 @@
 
         /* Feedback Section */
         .feedback-section {
-            margin-top: 6rem;
+            margin-top: 4rem;
         }
 
         .feedback-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
         .review-card {
             border: 4px solid var(--border);
-            padding: 3rem;
+            padding: 2rem;
             background: var(--bg);
         }
 
         .review-text {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             position: relative;
         }
 
@@ -243,38 +243,38 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             display: block;
             border-top: 2px solid var(--border);
-            padding-top: 1rem;
+            padding-top: 0.8rem;
         }
 
         /* Footer / Booking */
         footer {
-            margin-top: 6rem;
-            padding: 4rem 0 8rem 0; /* Extra bottom padding for mobile browsers */
+            margin-top: 4rem;
+            padding: 3rem 0 8rem 0;
             border-top: 12px solid var(--border);
         }
 
         .footer-links {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
         .booking-label {
             background: var(--text);
             color: var(--bg);
             padding: 0.2rem 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 900;
             display: inline-block;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .footer-links a, .footer-links p {
             display: block;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 900;
             color: var(--text);
             text-decoration: none;
@@ -286,13 +286,17 @@
             text-decoration-thickness: 4px;
         }
 
+        @media (max-width: 1024px) {
+            .gallery { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (max-width: 768px) {
-            .hero-title { font-size: 5rem; }
+            .hero-title { font-size: 4rem; }
             .info-grid { grid-template-columns: 1fr; }
             .info-card { border-right: none; border-bottom: 2px solid var(--border); }
             .container { padding: 1rem; border: none; }
-            .gallery { grid-template-columns: 1fr; }
-            footer { padding-bottom: 10rem; } /* Account for mobile browser UI bars */
+            .gallery { grid-template-columns: repeat(2, 1fr); }
+            footer { padding-bottom: 10rem; }
         }
     </style>
 </head>
@@ -329,140 +333,140 @@
         <h2 class="gallery-header">TATTOOS</h2>
         <section class="gallery">
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/21c0b2ed-be48-5e93-b32b-911ffb10e99a" alt="Sea Turtle and Butterfly">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/21c0b2ed-be48-5e93-b32b-911ffb10e99a" alt="Sea Turtle and Butterfly">
                 <div class="item-overlay">
                     <span class="item-label">Liz & Mhylene</span>
                     <span class="item-sub">Sea Turtle / Butterfly Matching</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/47501090-715b-5cc1-932e-7919a98eb89e" alt="Archangel Michael">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/47501090-715b-5cc1-932e-7919a98eb89e" alt="Archangel Michael">
                 <div class="item-overlay">
                     <span class="item-label">Archangel Michael</span>
                     <span class="item-sub">Black-and-grey Forearm</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/ba7f3258-74e2-5837-bfc1-24da6ae0cd41" alt="Hopper Rabbit">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/ba7f3258-74e2-5837-bfc1-24da6ae0cd41" alt="Hopper Rabbit">
                 <div class="item-overlay">
                     <span class="item-label">HOPPER</span>
                     <span class="item-sub">Traditional Rabbit Head</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/42c76e07-4d1b-5e33-bb4b-c3fd84713be2" alt="Cherry Blossom">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/42c76e07-4d1b-5e33-bb4b-c3fd84713be2" alt="Cherry Blossom">
                 <div class="item-overlay">
                     <span class="item-label">Cherry Blossom</span>
                     <span class="item-sub">Upper Arm Work</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/b3efcef8-5c0b-5e21-b05d-d71a0ae9a099" alt="Grenade Smiley">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/b3efcef8-5c0b-5e21-b05d-d71a0ae9a099" alt="Grenade Smiley">
                 <div class="item-overlay">
                     <span class="item-label">Grenade Pin</span>
                     <span class="item-sub">Green Grenade / Smiley Pin</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/cb7d136a-26a2-5716-be95-85f5268e69d5" alt="Dragons and Books">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/cb7d136a-26a2-5716-be95-85f5268e69d5" alt="Dragons and Books">
                 <div class="item-overlay">
                     <span class="item-label">Mystic Library</span>
                     <span class="item-sub">Dragons, Books, & Stars</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/3490fb4e-c329-5071-ae9f-f32099f876f3" alt="I Am The Storm">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/3490fb4e-c329-5071-ae9f-f32099f876f3" alt="I Am The Storm">
                 <div class="item-overlay">
                     <span class="item-label">The Storm</span>
                     <span class="item-sub">Sea Turtle Stippling</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/2f08f314-fcc3-5016-ac4e-ab427ac9f400" alt="Gothic Leg Work">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/2f08f314-fcc3-5016-ac4e-ab427ac9f400" alt="Gothic Leg Work">
                 <div class="item-overlay">
                     <span class="item-label">Them</span>
                     <span class="item-sub">Gothic Font / Pop Culture</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/fc56ba15-4d20-55b8-aa7e-1ce3c1ae6287" alt="Colorful Tuna">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/fc56ba15-4d20-55b8-aa7e-1ce3c1ae6287" alt="Colorful Tuna">
                 <div class="item-overlay">
                     <span class="item-label">Tuna Fish</span>
                     <span class="item-sub">Thigh Full-color</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/39747abf-b878-598e-97dc-ef285576fdc0" alt="Serenity Prayer">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/39747abf-b878-598e-97dc-ef285576fdc0" alt="Serenity Prayer">
                 <div class="item-overlay">
                     <span class="item-label">Serenity</span>
                     <span class="item-sub">Back Vertical Script</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/eafe7cc8-b454-5a89-8d1f-3311fa1c1b90" alt="Red Cardinal">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/eafe7cc8-b454-5a89-8d1f-3311fa1c1b90" alt="Red Cardinal">
                 <div class="item-overlay">
                     <span class="item-label">The Cardinal</span>
                     <span class="item-sub">Forearm Realistic Color</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/f562f491-69a9-5496-9735-16b085103321" alt="Tropical Sunset">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/f562f491-69a9-5496-9735-16b085103321" alt="Tropical Sunset">
                 <div class="item-overlay">
                     <span class="item-label">Tropical Sunset</span>
                     <span class="item-sub">Black and Grey Sleeve</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/11aa661c-ce17-5f63-b94b-b70545007daf" alt="Grim Reaper">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/11aa661c-ce17-5f63-b94b-b70545007daf" alt="Grim Reaper">
                 <div class="item-overlay">
                     <span class="item-label">Reaper's Gaze</span>
                     <span class="item-sub">Skull and Scythe</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/48419927-340c-5079-b169-a6fb74b9b8c0" alt="Hibiscus Flowers">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/48419927-340c-5079-b169-a6fb74b9b8c0" alt="Hibiscus Flowers">
                 <div class="item-overlay">
                     <span class="item-label">Hibiscus</span>
                     <span class="item-sub">Inner Arm Black-and-grey</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/ddc0ae0f-e65e-5efd-9525-83a429cfa071" alt="Jellyfish">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/ddc0ae0f-e65e-5efd-9525-83a429cfa071" alt="Jellyfish">
                 <div class="item-overlay">
                     <span class="item-label">The Medusa</span>
                     <span class="item-sub">Orange/Yellow Jellyfish</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/c221748a-38de-56ae-a910-4523af563302" alt="Chihuahua Portrait">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/c221748a-38de-56ae-a910-4523af563302" alt="Chihuahua Portrait">
                 <div class="item-overlay">
                     <span class="item-label">Chihuahua Portrait</span>
                     <span class="item-sub">Detailed Dog Portrait</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/e9165b8a-1edd-5904-807c-35cb30f30777" alt="Bird of Prey">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/e9165b8a-1edd-5904-807c-35cb30f30777" alt="Bird of Prey">
                 <div class="item-overlay">
                     <span class="item-label">Hawk Rising</span>
                     <span class="item-sub">Upper Back Work</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/1f4553be-110d-5534-8c18-57704d4fdf57" alt="Dad Memorial Cross">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/1f4553be-110d-5534-8c18-57704d4fdf57" alt="Dad Memorial Cross">
                 <div class="item-overlay">
                     <span class="item-label">Memorial Cross</span>
                     <span class="item-sub">"Dad" Banner Leg Work</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/e27b8a34-abc4-5a7d-96bf-51032bbf6f7c" alt="Winged Eyeball">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/e27b8a34-abc4-5a7d-96bf-51032bbf6f7c" alt="Winged Eyeball">
                 <div class="item-overlay">
                     <span class="item-label">The Eye</span>
                     <span class="item-sub">Eyeball Creature / Dagger</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/06e09a38-52e4-5f40-982e-3a0ede386b5b" alt="Feline Skull">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/06e09a38-52e4-5f40-982e-3a0ede386b5b" alt="Feline Skull">
                 <div class="item-overlay">
                     <span class="item-label">Feline Remains</span>
                     <span class="item-sub">Skull with Eye Flowers</span>
