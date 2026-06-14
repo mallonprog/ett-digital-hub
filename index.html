@@ -6,9 +6,11 @@
     <title>MOLLEE MARSTON | Creative Portfolio</title>
     <style>
         :root {
-            --bg: #0a0a0a;
-            --text: #e0e0e0;
-            --accent: #008080; /* Cedarway Teal */
+            --bg: #ffffff;
+            --text: #000000;
+            --accent: #000000;
+            --secondary: #333333;
+            --border: #000000;
             --blackletter: 'UnifrakturMaguntia', serif;
             --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
@@ -25,29 +27,31 @@
             background-color: var(--bg);
             color: var(--text);
             font-family: var(--sans);
-            line-height: 1.2;
+            line-height: 1.1;
             overflow-x: hidden;
         }
 
         h1, h2, h3 {
             font-family: var(--blackletter);
             text-transform: uppercase;
-            letter-spacing: -0.05em;
+            letter-spacing: -0.02em;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
+            border-left: 2px solid var(--border);
+            border-right: 2px solid var(--border);
         }
 
         /* Hero Section */
         header {
-            min-height: 80vh;
+            min-height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            border-bottom: 8px solid var(--text);
+            border-bottom: 12px solid var(--border);
             padding: 4rem 0;
         }
 
@@ -55,103 +59,104 @@
             font-size: clamp(3.5rem, 18vw, 14rem);
             line-height: 0.8;
             margin-bottom: 2rem;
-            animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
         .hero-title span {
             display: block;
-            color: var(--accent);
+            background: var(--text);
+            color: var(--bg);
+            width: fit-content;
+            padding: 0 1rem;
         }
 
         .residency-tag {
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
             margin-top: 1rem;
             max-width: 600px;
-            border-left: 4px solid var(--accent);
-            padding-left: 1rem;
-            font-size: 0.9rem;
+            border-left: 10px solid var(--accent);
+            padding-left: 1.5rem;
+            font-size: 1.1rem;
         }
 
         .cta-box {
-            margin-top: 2.5rem;
-            border: 4px solid var(--text);
-            padding: 1.5rem 3rem;
+            margin-top: 3rem;
+            border: 6px solid var(--border);
+            padding: 2rem 4rem;
             display: inline-block;
             text-decoration: none;
             color: var(--text);
             font-weight: 900;
-            transition: all 0.1s ease;
-            background: transparent;
+            transition: all 0.15s steps(2);
+            background: var(--bg);
             cursor: pointer;
             width: fit-content;
             text-transform: uppercase;
+            font-size: 1.2rem;
         }
 
         .cta-box:hover {
             background: var(--text);
             color: var(--bg);
+            box-shadow: 12px 12px 0 var(--secondary);
             transform: translate(-4px, -4px);
-            box-shadow: 8px 8px 0 var(--accent);
         }
 
-        /* Portfolio Details */
+        /* Information Grid */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 0;
-            margin: 4rem 0;
-            border: 2px solid var(--text);
+            border-bottom: 2px solid var(--border);
         }
 
         .info-card {
-            border: 1px solid var(--text);
-            padding: 3rem 2rem;
-            transition: background 0.3s ease;
+            border-right: 2px solid var(--border);
+            padding: 4rem 2rem;
         }
 
-        .info-card:hover {
-            background: #111;
+        .info-card:last-child {
+            border-right: none;
         }
 
         .info-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-decoration: underline;
         }
 
         .info-card p {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            font-weight: 900;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
         }
 
-        /* Gallery Grid */
+        /* Gallery */
         .gallery-header {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            border-bottom: 4px solid var(--text);
-            display: inline-block;
+            font-size: 5rem;
+            margin: 4rem 0 2rem 0;
+            background: var(--text);
+            color: var(--bg);
+            padding: 1rem;
+            width: 100%;
+            display: block;
         }
 
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 0;
+            border: 2px solid var(--border);
         }
 
         .gallery-item {
             position: relative;
             aspect-ratio: 1;
-            background: #111;
-            border: 4px solid var(--text);
+            background: #eee;
+            border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            transition: all 0.2s ease;
             overflow: hidden;
             text-decoration: none;
             color: var(--text);
@@ -161,13 +166,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(1) contrast(1.2);
-            transition: all 0.5s ease;
+            filter: grayscale(1);
+            transition: filter 0.3s ease;
         }
 
         .gallery-item:hover img {
-            filter: grayscale(0) contrast(1);
-            transform: scale(1.05);
+            filter: grayscale(0);
         }
 
         .item-overlay {
@@ -176,9 +180,10 @@
             left: 0;
             width: 100%;
             padding: 1.5rem;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            background: var(--bg);
+            border-top: 4px solid var(--border);
             transform: translateY(100%);
-            transition: transform 0.3s ease;
+            transition: transform 0.2s steps(4);
         }
 
         .gallery-item:hover .item-overlay {
@@ -187,51 +192,39 @@
 
         .item-label {
             font-family: var(--blackletter);
-            font-size: 2rem;
+            font-size: 2.5rem;
             display: block;
         }
 
         .item-sub {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             font-weight: 900;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--accent);
         }
 
         /* Feedback Section */
         .feedback-section {
-            margin-top: 8rem;
+            margin-top: 6rem;
         }
 
         .feedback-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
         .review-card {
-            border: 2px solid var(--text);
-            padding: 2rem;
-            position: relative;
-        }
-
-        .review-card::before {
-            content: "“";
-            position: absolute;
-            top: -1rem;
-            left: 1rem;
-            font-family: var(--blackletter);
-            font-size: 5rem;
-            color: var(--accent);
-            opacity: 0.3;
+            border: 4px solid var(--border);
+            padding: 3rem;
+            background: var(--bg);
         }
 
         .review-text {
-            font-size: 1.1rem;
-            font-style: italic;
-            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
             position: relative;
         }
 
@@ -239,65 +232,59 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             display: block;
-            border-top: 1px solid var(--text);
+            border-top: 2px solid var(--border);
             padding-top: 1rem;
         }
 
+        /* Footer / Booking */
         footer {
-            margin-top: 8rem;
+            margin-top: 6rem;
             padding: 4rem 0;
-            border-top: 8px solid var(--text);
+            border-top: 12px solid var(--border);
         }
 
         .footer-links {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        .footer-links a, .footer-links p {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 1rem;
-            position: relative;
-        }
-
-        .footer-links a::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transition: transform 0.2s ease;
-        }
-
-        .footer-links a:hover::after {
-            transform: scaleX(1);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
         }
 
         .booking-label {
-            color: var(--accent);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
+            background: var(--text);
+            color: var(--bg);
+            padding: 0.2rem 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 900;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a, .footer-links p {
             display: block;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
         }
 
         @keyframes reveal {
-            0% { transform: translateY(30px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
+            0% { transform: scaleX(0); opacity: 0; }
+            100% { transform: scaleX(1); opacity: 1; }
         }
 
         @media (max-width: 768px) {
-            .gallery { grid-template-columns: 1fr; }
-            .hero-title { font-size: 4rem; }
+            .hero-title { font-size: 5rem; }
+            .info-grid { grid-template-columns: 1fr; }
+            .info-card { border-right: none; border-bottom: 2px solid var(--border); }
+            .container { padding: 1rem; border: none; }
         }
     </style>
 </head>
@@ -306,9 +293,9 @@
         <header>
             <h1 class="hero-title">MOLLEE<span>MARSTON</span></h1>
             <p class="residency-tag">
-                Tattoo Artist & Piercer — Currently Resident at Electric Tiger Tattoo, Rehoboth Beach, DE.
+                Tattoo Artist & Piercer — Resident at Electric Tiger Tattoo, Rehoboth Beach, DE.
             </p>
-            <a href="#booking" class="cta-box">BOOKING & INQUIRIES</a>
+            <a href="#booking" class="cta-box">BOOKING / INQUIRIES</a>
         </header>
 
         <section class="info-grid">
@@ -333,19 +320,24 @@
 
         <h2 class="gallery-header">TATTOOS</h2>
         <section class="gallery">
+            <!-- Prepared for incoming images in /public/images/ -->
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/c54d20f4-1425-4aac-bde1-e09c5c772637?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=vercel%40theta-eon-430220-u6.iam.gserviceaccount.com%2F20260614%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260614T161900Z&X-Goog-Expires=60&X-Goog-SignedHeaders=host&X-Goog-Signature=967930db4d2ddce078b4454d97ccec81d3166bdd5888fabfe9c33e70e4c957ea783aa692a7ce341aafd3329819d5c54eb4cddec39472033d9827f266014aef4029bf90d230d1b249d292796013cd597a52fb1cde27c8aedface29a666f6d8be0f9ceafd43eb01cc5458340c8a9f0fc57420bdf77a8145040f602bb119180ffaa31f9966571989fd5cd2a4baab2e61a59c8270afec15908b7fe156cea5f78d577dfc3a529e38fefe369e26edd9850fbf5040f7b491091ec1652ebf9de11d53e20f4adc609f055804190e342317d93a7761ee5d814ae086539ae0966cc2878ebdc47952f4f3319bdc1700b9a536078f056025b25ef7d7865625f333199124fd467" alt="Half Doomed / Semi Sweet">
+                <img src="/images/tattoo-1.png" alt="Half Doomed / Semi Sweet" onerror="this.src='https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/c54d20f4-1425-4aac-bde1-e09c5c772637'">
                 <div class="item-overlay">
                     <span class="item-label">Half Doomed / Semi Sweet</span>
                     <span class="item-sub">Blackletter Work</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/7df545a4-40c5-4dae-8f59-021f9bf4ae42?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=vercel%40theta-eon-430220-u6.iam.gserviceaccount.com%2F20260614%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20260614T161900Z&X-Goog-Expires=60&X-Goog-SignedHeaders=host&X-Goog-Signature=01ede3d93e3eaf14cd9619e4894a021fea744f242cb1d5ec5d46657b5eb75aa292e0d31bf144f179e31749819e7f94ae89554507bf4c2433c5318b7477a9ac99d8d7591525851ac50282b87f5f312af2ae6928b62b7f1cda6e962a1624a45388ce047b6b85a98a13ac8f1809ab05fa61103947bc254ae52a757a15c8ee91c82adaacd5c85f60e3f2751718e3b76da803423143f580a6ecbc9db434df9efc2f717d178f099d09e2b6cd31db1fb2cfbae104a3e987cd5bfa73d4f566fadd0f263e7dae87588d493d2867a1d855a92579bc1a8411f6e3703002ba01112435491ee2f01c3fa7247950a157dfd75e3387cb943e9b2aebe2b1c34b3f5caee9a6a4efd3" alt="Faith">
+                <img src="/images/tattoo-2.png" alt="Faith" onerror="this.src='https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/7df545a4-40c5-4dae-8f59-021f9bf4ae42'">
                 <div class="item-overlay">
                     <span class="item-label">Faith</span>
                     <span class="item-sub">Fine-line Script</span>
                 </div>
+            </div>
+            <!-- Empty slots for new work -->
+            <div class="gallery-item" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-family: var(--blackletter); font-size: 2rem; color: #ccc;">
+                NEW WORK PENDING
             </div>
         </section>
 
@@ -353,37 +345,33 @@
             <h2 class="gallery-header">CLIENT FEEDBACK</h2>
             <div class="feedback-grid">
                 <div class="review-card">
-                    <p class="review-text">Mollee is an incredible artist. She took my rough idea and turned it into a masterpiece. The shop has a neat and clean environment that contributes to a positive experience.</p>
+                    <p class="review-text">Mollee is an incredible artist. She took my rough idea and turned it into a masterpiece. The shop has a neat and clean environment.</p>
                     <span class="review-author">— Local Review</span>
                 </div>
                 <div class="review-card">
-                    <p class="review-text">Electric Tiger Tattoo offers perfection, cleanliness, and excellent customer service to every person that walks through their doors. Mollee Marston is professional and highly skilled.</p>
+                    <p class="review-text">Electric Tiger Tattoo offers perfection and excellent customer service. Mollee Marston is professional and highly skilled.</p>
                     <span class="review-author">— Verified Client</span>
-                </div>
-                <div class="review-card">
-                    <p class="review-text">Professional tattoo service in a distinctive environment resembling a tattoo museum. Mollee's attention to detail is unmatched for custom and fine-line work.</p>
-                    <span class="review-author">— Rehoboth Local</span>
                 </div>
             </div>
         </section>
 
         <footer id="booking">
-            <h2 class="gallery-header">BOOKING & INQUIRIES</h2>
+            <h2 class="gallery-header">BOOKING / CONTACT</h2>
             <div class="footer-links">
                 <div>
-                    <span class="booking-label">Direct Email</span>
+                    <span class="booking-label">EMAIL</span>
                     <a href="mailto:mollee.marston@tattoomollee.com">mollee.marston@tattoomollee.com</a>
                 </div>
                 <div>
-                    <span class="booking-label">Instagram</span>
+                    <span class="booking-label">INSTAGRAM</span>
                     <a href="https://instagram.com/dawgbedd" target="_blank">@DAWGBEDD</a>
                 </div>
                 <div>
-                    <span class="booking-label">Text Inquiry</span>
+                    <span class="booking-label">TEXT</span>
                     <p>410-497-7137</p>
                 </div>
                 <div>
-                    <span class="booking-label">Shop Line</span>
+                    <span class="booking-label">SHOP LINE</span>
                     <p>302-226-1138 (Ask for Mollee)</p>
                 </div>
             </div>
