@@ -43,15 +43,16 @@
 
         /* Hero Section */
         header {
-            height: 100vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             border-bottom: 8px solid var(--text);
+            padding: 4rem 0;
         }
 
         .hero-title {
-            font-size: clamp(4rem, 20vw, 15rem);
+            font-size: clamp(3.5rem, 18vw, 14rem);
             line-height: 0.8;
             margin-bottom: 2rem;
             animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1);
@@ -70,12 +71,13 @@
             max-width: 600px;
             border-left: 4px solid var(--accent);
             padding-left: 1rem;
+            font-size: 0.9rem;
         }
 
         .cta-box {
             margin-top: 2.5rem;
             border: 4px solid var(--text);
-            padding: 1.5rem;
+            padding: 1.5rem 3rem;
             display: inline-block;
             text-decoration: none;
             color: var(--text);
@@ -84,98 +86,161 @@
             background: transparent;
             cursor: pointer;
             width: fit-content;
+            text-transform: uppercase;
         }
 
         .cta-box:hover {
             background: var(--text);
             color: var(--bg);
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0 var(--accent);
         }
 
         /* Portfolio Details */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 0;
             margin: 4rem 0;
+            border: 2px solid var(--text);
         }
 
         .info-card {
-            border: 2px solid var(--text);
-            padding: 2rem;
+            border: 1px solid var(--text);
+            padding: 3rem 2rem;
+            transition: background 0.3s ease;
+        }
+
+        .info-card:hover {
+            background: #111;
         }
 
         .info-card h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
             color: var(--accent);
         }
 
-        /* Gallery Grid */
+        .info-card p {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Gallery Grid - Re-styled as Minimal Brutalist Blocks */
+        .gallery-header {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            border-bottom: 4px solid var(--text);
+            display: inline-block;
+        }
+
         .gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .gallery-item {
-            aspect-ratio: 1;
-            background: #1a1a1a;
-            border: 1px solid #333;
+            position: relative;
+            aspect-ratio: 16/9;
+            background: #111;
+            border: 4px solid var(--text);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            font-family: var(--blackletter);
-            font-size: 2rem;
-            transition: transform 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
-            opacity: 0;
-            text-align: center;
-            padding: 1rem;
-            cursor: default;
+            padding: 2rem;
+            transition: all 0.2s ease;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text);
         }
 
-        .gallery-item.visible {
-            opacity: 1;
+        .gallery-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover::before {
+            transform: scaleX(1);
         }
 
         .gallery-item:hover {
+            background: #1a1a1a;
             border-color: var(--accent);
-            color: var(--accent);
-            transform: scale(0.98);
+            transform: translateY(-5px);
+        }
+
+        .item-label {
+            font-family: var(--blackletter);
+            font-size: 3rem;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .item-sub {
+            font-size: 0.8rem;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            margin-top: 1rem;
+            opacity: 0.6;
+            text-transform: uppercase;
         }
 
         footer {
             margin-top: 8rem;
-            padding-bottom: 4rem;
+            padding: 4rem 0;
             border-top: 8px solid var(--text);
-            padding-top: 2rem;
         }
 
         .footer-links {
             display: flex;
-            gap: 2rem;
+            flex-wrap: wrap;
+            gap: 3rem;
             font-weight: 900;
+            text-transform: uppercase;
         }
 
         .footer-links a {
             color: var(--text);
             text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s;
+            font-size: 1.2rem;
+            position: relative;
         }
 
-        .footer-links a:hover {
-            border-bottom-color: var(--accent);
+        .footer-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+
+        .footer-links a:hover::after {
+            transform: scaleX(1);
         }
 
         @keyframes reveal {
-            0% { transform: translateY(50px); opacity: 0; }
+            0% { transform: translateY(30px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
         }
 
         @media (max-width: 768px) {
             .gallery { grid-template-columns: 1fr; }
-            .hero-title { font-size: 5rem; }
+            .hero-title { font-size: 4rem; }
+            .gallery-item { aspect-ratio: 1; }
         }
     </style>
 </head>
@@ -191,51 +256,50 @@
 
         <section class="info-grid">
             <div class="info-card">
-                <h3>FOCUS</h3>
+                <h3>SPECIALIZATION</h3>
                 <p>American Traditional</p>
                 <p>Fine-line Script</p>
                 <p>Blackletter / Gothic</p>
             </div>
             <div class="info-card">
-                <h3>CURRENT BASE</h3>
+                <h3>LOCATION</h3>
                 <p>Electric Tiger Tattoo</p>
                 <p>19972 Church St</p>
                 <p>Rehoboth Beach, DE</p>
             </div>
             <div class="info-card">
-                <h3>SCHEDULE</h3>
+                <h3>AVAILABILITY</h3>
                 <p>Tue - Sun</p>
                 <p>12:00 PM - 8:00 PM</p>
             </div>
         </section>
 
-        <section class="gallery" id="gallery">
-            <div class="gallery-item">HALF DOOMED</div>
-            <div class="gallery-item">SEMI SWEET</div>
-            <div class="gallery-item">FAITH</div>
-            <div class="gallery-item">BLACKLETTER</div>
+        <h2 class="gallery-header">WORKS</h2>
+        <section class="gallery">
+            <div class="gallery-item">
+                <span class="item-label">Half Doomed</span>
+                <span class="item-sub">Stencil / Design</span>
+            </div>
+            <div class="gallery-item">
+                <span class="item-label">Semi Sweet</span>
+                <span class="item-sub">Stencil / Design</span>
+            </div>
+            <div class="gallery-item">
+                <span class="item-label">Faith</span>
+                <span class="item-sub">Typography / Script</span>
+            </div>
+            <div class="gallery-item">
+                <span class="item-label">Blackletter</span>
+                <span class="item-sub">Custom Lettering</span>
+            </div>
         </section>
 
         <footer>
             <div class="footer-links">
-                <a href="https://instagram.com/dawgbedd" target="_blank">INSTAGRAM @DAWGBEDD</a>
-                <a href="mailto:electrictigertattoo.de@gmail.com">EMAIL CONTACT</a>
+                <a href="https://instagram.com/dawgbedd" target="_blank">Instagram @DAWGBEDD</a>
+                <a href="mailto:electrictigertattoo.de@gmail.com">Email Contact</a>
             </div>
         </footer>
     </div>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            observer.observe(item);
-        });
-    </script>
 </body>
 </html>
