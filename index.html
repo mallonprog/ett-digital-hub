@@ -135,7 +135,7 @@
         /* Gallery */
         .gallery-header {
             font-size: 5rem;
-            margin: 4rem 0 2rem 0;
+            margin: 4rem 0 0 0;
             background: var(--text);
             color: var(--bg);
             padding: 1rem;
@@ -145,7 +145,7 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 0;
             border: 2px solid var(--border);
         }
@@ -179,7 +179,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 1.5rem;
+            padding: 1.2rem;
             background: var(--bg);
             border-top: 4px solid var(--border);
             transform: translateY(100%);
@@ -192,14 +192,15 @@
 
         .item-label {
             font-family: var(--blackletter);
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             display: block;
+            margin-bottom: 0.2rem;
         }
 
         .item-sub {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 900;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
         }
 
@@ -285,6 +286,7 @@
             .info-grid { grid-template-columns: 1fr; }
             .info-card { border-right: none; border-bottom: 2px solid var(--border); }
             .container { padding: 1rem; border: none; }
+            .gallery { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -320,24 +322,145 @@
 
         <h2 class="gallery-header">TATTOOS</h2>
         <section class="gallery">
-            <!-- Prepared for incoming images in /public/images/ -->
             <div class="gallery-item">
-                <img src="/images/tattoo-1.png" alt="Half Doomed / Semi Sweet" onerror="this.src='https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/c54d20f4-1425-4aac-bde1-e09c5c772637'">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/21c0b2ed-be48-5e93-b32b-911ffb10e99a/media" alt="Sea Turtle and Butterfly">
                 <div class="item-overlay">
-                    <span class="item-label">Half Doomed / Semi Sweet</span>
-                    <span class="item-sub">Blackletter Work</span>
+                    <span class="item-label">Liz & Mhylene</span>
+                    <span class="item-sub">Sea Turtle / Butterfly Matching</span>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="/images/tattoo-2.png" alt="Faith" onerror="this.src='https://storage.googleapis.com/interaction-media-bucket/ef337b54-625c-4935-83a5-c5dada37bfcc/7df545a4-40c5-4dae-8f59-021f9bf4ae42'">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/47501090-715b-5cc1-932e-7919a98eb89e/media" alt="Archangel Michael">
                 <div class="item-overlay">
-                    <span class="item-label">Faith</span>
-                    <span class="item-sub">Fine-line Script</span>
+                    <span class="item-label">Archangel Michael</span>
+                    <span class="item-sub">Black-and-grey Forearm</span>
                 </div>
             </div>
-            <!-- Empty slots for new work -->
-            <div class="gallery-item" style="background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-family: var(--blackletter); font-size: 2rem; color: #ccc;">
-                NEW WORK PENDING
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ba7f3258-74e2-5837-bfc1-24da6ae0cd41/media" alt="Hopper Rabbit">
+                <div class="item-overlay">
+                    <span class="item-label">HOPPER</span>
+                    <span class="item-sub">Traditional Rabbit Head</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/42c76e07-4d1b-5e33-bb4b-c3fd84713be2/media" alt="Cherry Blossom">
+                <div class="item-overlay">
+                    <span class="item-label">Cherry Blossom</span>
+                    <span class="item-sub">Upper Arm Work</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/b3efcef8-5c0b-5e21-b05d-d71a0ae9a099/media" alt="Grenade Smiley">
+                <div class="item-overlay">
+                    <span class="item-label">Grenade Pin</span>
+                    <span class="item-sub">Green Grenade / Smiley Pin</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/cb7d136a-26a2-5716-be95-85f5268e69d5/media" alt="Dragons and Books">
+                <div class="item-overlay">
+                    <span class="item-label">Mystic Library</span>
+                    <span class="item-sub">Dragons, Books, & Stars</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/3490fb4e-c329-5071-ae9f-f32099f876f3/media" alt="I Am The Storm">
+                <div class="item-overlay">
+                    <span class="item-label">The Storm</span>
+                    <span class="item-sub">Sea Turtle Stippling</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/2f08f314-fcc3-5016-ac4e-ab427ac9f400/media" alt="Gothic Leg Work">
+                <div class="item-overlay">
+                    <span class="item-label">Them</span>
+                    <span class="item-sub">Gothic Font / Pop Culture</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/fc56ba15-4d20-55b8-aa7e-1ce3c1ae6287/media" alt="Colorful Tuna">
+                <div class="item-overlay">
+                    <span class="item-label">Tuna Fish</span>
+                    <span class="item-sub">Thigh Full-color</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/39747abf-b878-598e-97dc-ef285576fdc0/media" alt="Serenity Prayer">
+                <div class="item-overlay">
+                    <span class="item-label">Serenity</span>
+                    <span class="item-sub">Back Vertical Script</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/eafe7cc8-b454-5a89-8d1f-3311fa1c1b90/media" alt="Red Cardinal">
+                <div class="item-overlay">
+                    <span class="item-label">The Cardinal</span>
+                    <span class="item-sub">Forearm Realistic Color</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/f562f491-69a9-5496-9735-16b085103321/media" alt="Tropical Sleeve">
+                <div class="item-overlay">
+                    <span class="item-label">Tropical Sunset</span>
+                    <span class="item-sub">Black and Grey Sleeve</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/11aa661c-ce17-5f63-b94b-b70545007daf/media" alt="Grim Reaper">
+                <div class="item-overlay">
+                    <span class="item-label">Reaper's Gaze</span>
+                    <span class="item-sub">Skull and Scythe</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/48419927-340c-5079-b169-a6fb74b9b8c0/media" alt="Hibiscus Flowers">
+                <div class="item-overlay">
+                    <span class="item-label">Hibiscus</span>
+                    <span class="item-sub">Inner Arm Black-and-grey</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/ddc0ae0f-e65e-5efd-9525-83a429cfa071/media" alt="Jellyfish">
+                <div class="item-overlay">
+                    <span class="item-label">The Medusa</span>
+                    <span class="item-sub">Orange/Yellow Jellyfish</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/c221748a-38de-56ae-a910-4523af563302/media" alt="Chihuahua Portrait">
+                <div class="item-overlay">
+                    <span class="item-label">Chihuahua Portrait</span>
+                    <span class="item-sub">Detailed Dog Portrait</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/e9165b8a-1edd-5904-807c-35cb30f30777/media" alt="Bird of Prey">
+                <div class="item-overlay">
+                    <span class="item-label">Hawk Rising</span>
+                    <span class="item-sub">Upper Back Work</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/1f4553be-110d-5534-8c18-57704d4fdf57/media" alt="Dad Memorial Cross">
+                <div class="item-overlay">
+                    <span class="item-label">Memorial Cross</span>
+                    <span class="item-sub">"Dad" Banner Leg Work</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/e27b8a34-abc4-5a7d-96bf-51032bbf6f7c/media" alt="Winged Eyeball">
+                <div class="item-overlay">
+                    <span class="item-label">The Eye</span>
+                    <span class="item-sub">Eyeball Creature / Dagger</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://storage.googleapis.com/interaction-media-bucket/06e09a38-52e4-5f40-982e-3a0ede386b5b/media" alt="Feline Skull">
+                <div class="item-overlay">
+                    <span class="item-label">Feline Remains</span>
+                    <span class="item-sub">Skull with Eye Flowers</span>
+                </div>
             </div>
         </section>
 
