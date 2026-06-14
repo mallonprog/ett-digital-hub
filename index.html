@@ -82,6 +82,17 @@
             max-width: 500px;
         }
 
+        .walk-in-banner {
+            background: var(--accent);
+            color: var(--bg);
+            font-weight: 900;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
         .cta-box {
             margin-top: 2rem;
             border: 1px solid var(--accent);
@@ -98,12 +109,6 @@
         .cta-box:hover {
             background: var(--accent);
             color: var(--bg);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            border-bottom: 1px solid var(--border);
         }
 
         .info-grid {
@@ -222,6 +227,7 @@
         <header>
             <h1 class="hero-title">MOLLEE<span>MARSTON</span></h1>
             <p class="residency-tag">Tattoo Artist & Piercer — Resident at Electric Tiger Tattoo, Rehoboth Beach, DE.</p>
+            <p class="walk-in-banner">Walk ins available everyday</p>
             <a href="#booking" class="cta-box analytics-booking">BOOKING / INQUIRIES</a>
         </header>
 
@@ -244,6 +250,7 @@
                 <h3>AVAILABILITY</h3>
                 <p>Mon - Tue: 12:00 PM - 8:00 PM</p>
                 <p>Thu - Sat: 12:00 PM - 8:00 PM</p>
+                <p class="walk-in-banner">Walk ins available everyday</p>
             </div>
         </section>
 
@@ -254,9 +261,6 @@
                 <p>Live Portfolio</p>
                 <a href="https://instagram.com/dawgbedd" class="view-on-ig" target="_blank">View Full Portfolio on Instagram</a>
             </div>
-            <!-- Note: For a live automatic grid without API auth issues, 
-                 consider a widget service like LightWidget or Elfsight.
-                 The container below is styled for a standard 3-column embed. -->
         </section>
 
         <h2 class="section-header">CLIENT FEEDBACK</h2>
