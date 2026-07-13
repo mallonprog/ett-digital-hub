@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOLLEE MARSTON | Creative Portfolio</title>
+    <title>MOLLEE MARSTON | Editorial Portfolio</title>
     <style>
         :root {
             --bg: #121212;
-            --text: #e0e0e0;
-            --accent: #e0e0e0;
-            --secondary: #161616;
-            --border: #333333;
-            --blackletter: 'UnifrakturMaguntia', serif;
-            --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --cream: #fffdd0;
+            --text: #fffdd0;
+            --charcoal: #121212;
+            --serif: 'Cormorant Garamond', serif;
+            --sans: 'Inter', sans-serif;
+            --transition: cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@400;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@300;900&display=swap');
 
         * {
             margin: 0;
@@ -23,303 +23,361 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             background-color: var(--bg);
             color: var(--text);
             font-family: var(--sans);
-            line-height: 1.1;
+            line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* Typography */
         h1, h2, h3 {
-            font-family: var(--blackletter);
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
+            font-family: var(--serif);
+            font-weight: 300;
+            text-transform: lowercase;
+            font-style: italic;
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem;
-            border-left: 1px solid var(--border);
-            border-right: 1px solid var(--border);
+        .huge-text {
+            font-size: clamp(4rem, 12vw, 15rem);
+            line-height: 0.85;
+            letter-spacing: -0.04em;
         }
 
-        header {
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-bottom: 1px solid var(--border);
-            padding: 2rem 0;
-        }
-
-        .hero-title {
-            font-size: clamp(3rem, 15vw, 12rem);
-            line-height: 0.8;
-            margin-bottom: 1rem;
-        }
-
-        .hero-title span {
-            display: block;
-            background: var(--text);
-            color: var(--bg);
-            width: fit-content;
-            padding: 0 0.5rem;
-        }
-
-        .residency-tag {
+        .label {
+            font-family: var(--sans);
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-left: 1px solid var(--accent);
-            padding-left: 1rem;
-            font-size: 1rem;
-            max-width: 500px;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            opacity: 0.6;
         }
 
-        .walk-in-banner {
-            background: var(--accent);
-            color: var(--bg);
-            font-weight: 900;
-            text-transform: uppercase;
-            display: inline-block;
-            padding: 0.2rem 0.5rem;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .cta-box {
-            margin-top: 2rem;
-            border: 1px solid var(--accent);
-            padding: 1rem 2rem;
-            display: inline-block;
-            text-decoration: none;
-            color: var(--accent);
-            font-weight: 900;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            background: transparent;
-        }
-
-        .cta-box:hover {
-            background: var(--accent);
-            color: var(--bg);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            border-bottom: 1px solid var(--border);
-        }
-
-        .info-card {
-            border-right: 1px solid var(--border);
-            padding: 2rem 1.5rem;
-        }
-
-        .info-card:last-child { border-right: none; }
-
-        .info-card h3 { font-size: 1.5rem; margin-bottom: 1rem; text-decoration: underline; }
-        .info-card p { font-weight: 900; font-size: 1rem; margin-bottom: 0.4rem; }
-
-        .section-header {
-            font-size: 3rem;
-            background: var(--border);
-            color: var(--bg);
-            padding: 0.5rem 1rem;
-            margin-top: 3rem;
-        }
-
-        .instagram-feed {
-            margin-top: 2rem;
-            border: 1px solid var(--border);
-            background: var(--secondary);
-            min-height: 400px;
+        /* Layout Units */
+        section {
             position: relative;
+            width: 100%;
+            padding: 10vh 5vw;
+        }
+
+        .full-bleed {
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Cinematic Hero */
+        .hero {
+            background: linear-gradient(rgba(18,18,18,0.4), rgba(18,18,18,0.4)), url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            justify-content: flex-start;
+            padding: 0 8vw;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 60vw;
+        }
+
+        /* Asymmetrical Showcase */
+        .showcase-block {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20vh;
+            gap: 10vw;
+        }
+
+        .showcase-block:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .img-container {
+            flex: 0 0 55%;
+            height: 70vh;
+            background: #1a1a1a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(1) contrast(1.1);
+            transition: transform 1.5s var(--transition);
+        }
+
+        .showcase-block:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0.5);
+        }
+
+        .text-panel {
+            flex: 1;
+            padding: 2rem;
+            transform: translateY(30px);
+            transition: transform 1s var(--transition);
+        }
+
+        /* Editorial spread grid */
+        .editorial-spread {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            margin-top: 5vh;
+        }
+
+        .flash-item {
+            grid-column: span 4;
+            margin-bottom: 10vh;
+        }
+
+        .flash-item:nth-child(2) { grid-column: 7 / span 5; margin-top: 15vh; }
+        .flash-item:nth-child(3) { grid-column: 2 / span 3; }
+
+        .flash-card {
+            background: var(--charcoal);
+            border: 0.5px solid rgba(255, 253, 208, 0.2);
+            padding: 1rem;
+            aspect-ratio: 3/4;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
+            justify-content: flex-end;
         }
 
-        .feed-placeholder {
-            text-align: center;
-            border: 1px dashed var(--border);
-            padding: 4rem 2rem;
-            width: 100%;
+        /* Rates Table - restraint */
+        .rates-container {
             max-width: 800px;
+            margin: 0 auto;
         }
 
-        .feed-placeholder h3 {
+        .rate-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 1.5rem 0;
+            border-bottom: 0.5px solid rgba(255, 253, 208, 0.1);
+        }
+
+        /* Minimal Form */
+        .booking-minimal {
+            max-width: 600px;
+            margin-top: 5vh;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 253, 208, 0.3);
+            color: var(--cream);
+            padding: 1rem 0;
+            font-family: var(--serif);
             font-size: 2rem;
-            margin-bottom: 1rem;
+            font-style: italic;
         }
 
-        .feed-placeholder p {
+        input:focus {
+            outline: none;
+            border-bottom-color: var(--cream);
+        }
+
+        button {
+            background: var(--cream);
+            color: var(--charcoal);
+            border: none;
+            padding: 1.5rem 4rem;
+            font-family: var(--sans);
             font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: 0.2em;
+            cursor: pointer;
+            transition: transform 0.3s var(--transition);
+        }
+
+        button:hover {
+            transform: scale(0.98);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            mix-blend-mode: difference;
+        }
+
+        .logo {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-weight: 600;
             letter-spacing: 0.1em;
-            margin-bottom: 2rem;
+            text-transform: lowercase;
         }
 
-        .view-on-ig {
-            background: var(--text);
-            color: var(--bg);
-            padding: 1rem 2rem;
-            text-decoration: none;
-            font-weight: 900;
-            text-transform: uppercase;
-            display: inline-block;
-            transition: opacity 0.2s;
-        }
-
-        .view-on-ig:hover {
-            opacity: 0.8;
-        }
-
-        .feedback-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .review-card {
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            background: var(--secondary);
-        }
-
-        .review-text { font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; font-style: italic; }
-        .review-author { font-weight: 900; font-size: 0.8rem; text-transform: uppercase; border-top: 1px solid var(--border); padding-top: 0.5rem; }
-
-        footer {
-            margin-top: 4rem;
-            padding: 3rem 0 8rem 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-
-        .booking-label { background: var(--text); color: var(--bg); padding: 0.2rem 0.5rem; font-size: 0.8rem; font-weight: 900; margin-bottom: 0.8rem; display: inline-block; }
-        .footer-links a, .footer-links p { font-size: 1.2rem; font-weight: 900; color: var(--text); text-decoration: none; word-break: break-all; }
-        .footer-links a:hover { text-decoration: underline; }
-
-        @media (max-width: 600px) {
-            .hero-title { font-size: 4rem; }
-            .container { border: none; }
+        @media (max-width: 900px) {
+            .showcase-block, .showcase-block:nth-child(even) { flex-direction: column; }
+            .img-container { flex: 0 0 100%; height: 50vh; width: 100%; }
+            .huge-text { font-size: 5rem; }
+            .flash-item { grid-column: span 12 !important; }
         }
     </style>
-    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1 class="hero-title">MOLLEE<span>MARSTON</span></h1>
-            <p class="residency-tag">Tattoo Artist & Piercer — Resident at Electric Tiger Tattoo, Rehoboth Beach, DE.</p>
-            <p class="walk-in-banner">Walk ins available everyday</p>
-            <a href="#booking" class="cta-box analytics-booking" data-analytics="hero_cta">BOOKING / INQUIRIES</a>
-        </header>
 
-        <section class="info-grid">
-            <div class="info-card">
-                <h3>SPECIALIZATION</h3>
-                <p>American Traditional</p>
-                <p>Illustrative</p>
-                <p>Lettering</p>
-                <p>Black and Grey</p>
-                <p>Fine line</p>
-            </div>
-            <div class="info-card">
-                <h3>LOCATION</h3>
-                <p>Electric Tiger Tattoo</p>
-                <p>19972 Church St</p>
-                <p>Rehoboth Beach, DE</p>
-            </div>
-            <div class="info-card">
-                <h3>AVAILABILITY</h3>
-                <p>Mon - Tue: 12:00 PM - 8:00 PM</p>
-                <p>Thu - Sat: 12:00 PM - 8:00 PM</p>
-                <p><em>Dez and Adam are available most other days including Sunday and Wednesday</em></p>
-                <p class="walk-in-banner">Walk ins available everyday</p>
-            </div>
-        </section>
+    <nav>
+        <div class="logo">m.marston</div>
+        <div class="label">Rehoboth Beach, DE</div>
+    </nav>
 
-        <h2 class="section-header">LATEST WORK</h2>
-        <section class="instagram-feed">
-            <div class="feed-placeholder">
-                <h3>@DAWGBEDD</h3>
-                <p>Live Portfolio</p>
-                <a href="https://instagram.com/dawgbedd" class="view-on-ig" target="_blank">View Full Portfolio on Instagram</a>
-            </div>
-        </section>
+    <section class="hero full-bleed">
+        <div class="hero-content">
+            <p class="label" style="margin-bottom: 2rem;">Tattoo & Piercing Residency</p>
+            <h1 class="huge-text">Mollee<br>Marston</h1>
+            <p class="label" style="margin-top: 3rem; max-width: 300px; line-height: 2;">Electric Tiger Tattoo. American traditional. fine line. custom works.</p>
+        </div>
+    </section>
 
-        <h2 class="section-header">CLIENT FEEDBACK</h2>
-        <section class="feedback-grid">
-            <div class="review-card">
-                <p class="review-text">"Mollee was amazing, quick, professional, and super clean. Perfectly matched my left nose piercing."</p>
-                <span class="review-author">— Ashleigh Clough (5★)</span>
+    <section id="showcase">
+        <p class="label" style="text-align: center; margin-bottom: 10vh;">The Showcase / 01</p>
+        
+        <div class="showcase-block">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1590212151175-e58edd96185b?auto=format&fit=crop&q=80&w=1200" alt="Tiger Tattoo">
             </div>
-            <div class="review-card">
-                <p class="review-text">"Super fast and professional experience getting my daughters' ears pierced."</p>
-                <span class="review-author">— Evelyn Lang (5★)</span>
+            <div class="text-panel parralax">
+                <p class="label">Traditional</p>
+                <h2 class="huge-text" style="font-size: 5rem;">The Tiger</h2>
+                <p style="font-family: var(--serif); font-style: italic; font-size: 1.2rem; margin-top: 1rem;">Done. Upper arm. A study in bold lines and high-contrast shading.</p>
             </div>
-            <div class="review-card">
-                <p class="review-text">"Walked in on a whim and Mollee was amazing. Gentle technique and edited my illustration perfectly."</p>
-                <span class="review-author">— Diana P. (5★)</span>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"Mollee did my industrial piercing. Super quick, painless, and gave great aftercare advice."</p>
-                <span class="review-author">— aaliyah ellington (5★)</span>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"Great first-time experience getting mother/daughter tattoos. Mollee has a very steady hand and professional approach."</p>
-                <span class="review-author">— Heather Sparks (5★)</span>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"Mollee did an amazing job. Incredibly professional."</p>
-                <span class="review-author">— Simeon Jordanov (5★)</span>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"Mollee Marston is professional, kind, and incredibly inclusive toward female and LGBTQ+ clients. She's done six of my tattoos this year!"</p>
-                <span class="review-author">— Kelly Marx (5★)</span>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"Clean, professional, and fast experience getting my daughter's ears pierced."</p>
-                <span class="review-author">— Bud Roth (5★)</span>
-            </div>
-            <div class="review-card">
-                <p class="review-text">"I walked in and had a great experience and resulting tattoos. Mollee is an awesome tattoo artist and I've got two great artworks from her now! My friends have too. Her work heals well and stands the test of time."</p>
-                <span class="review-author">— Emily Goldberg (5★)</span>
-            </div>
-        </section>
+        </div>
 
-        <footer id="booking">
-            <h2 class="section-header">BOOKING / CONTACT</h2>
-            <div class="footer-links">
-                <div><span class="booking-label">EMAIL</span><p><a href="mailto:mollee.marston@tattoomollee.com" class="analytics-booking" data-analytics="email">mollee.marston@tattoomollee.com</a></p></div>
-                <div><span class="booking-label">INSTAGRAM</span><p><a href="https://instagram.com/dawgbedd" class="analytics-booking" target="_blank" data-analytics="instagram">@DAWGBEDD</a></p></div>
-                <div><span class="booking-label">TEXT</span><p><a href="tel:410-497-7137" class="analytics-booking" data-analytics="text">410-497-7137</a></p></div>
-                <div><span class="booking-label">SHOP LINE</span><p><a href="tel:302-226-1138" class="analytics-booking" data-analytics="shop_line">302-226-1138</a> (Ask for Mollee)</p></div>
+        <div class="showcase-block">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&q=80&w=1200" alt="Script Tattoo">
             </div>
-        </footer>
-    </div>
+            <div class="text-panel parralax">
+                <p class="label">Fine Line</p>
+                <h2 class="huge-text" style="font-size: 5rem;">The Script</h2>
+                <p style="font-family: var(--serif); font-style: italic; font-size: 1.2rem; margin-top: 1rem;">Healed. Minimalist typography for a lifetime of clarity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="flash" style="background: var(--charcoal);">
+        <p class="label" style="margin-bottom: 5vh;">Flash Gallery / 02</p>
+        <div class="editorial-spread">
+            <div class="flash-item">
+                <div class="flash-card">
+                    <p class="label">Available</p>
+                    <h3 style="font-size: 2rem;">Snake & Dagger</h3>
+                    <p class="label">$200</p>
+                </div>
+            </div>
+            <div class="flash-item">
+                <div class="flash-card">
+                    <p class="label">Available</p>
+                    <h3 style="font-size: 2rem;">Eternal Eye</h3>
+                    <p class="label">$150</p>
+                </div>
+            </div>
+            <div class="flash-item">
+                <div class="flash-card">
+                    <p class="label">Available</p>
+                    <h3 style="font-size: 2rem;">Willow</h3>
+                    <p class="label">$250</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rates">
+        <p class="label" style="text-align: center; margin-bottom: 10vh;">Service Rates / 03</p>
+        <div class="rates-container">
+            <div class="rate-row">
+                <h3>Tattooing</h3>
+                <span class="huge-text" style="font-size: 3rem;">$150/hr</span>
+            </div>
+            <div class="rate-row">
+                <h3>Piercing</h3>
+                <span class="huge-text" style="font-size: 3rem;">$40+</span>
+            </div>
+            <div class="rate-row">
+                <h3>Consultation</h3>
+                <span class="huge-text" style="font-size: 3rem;">Free</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" style="padding-bottom: 20vh;">
+        <p class="label">Inquiries / 04</p>
+        <h2 class="huge-text" style="margin-top: 2rem;">Start<br>A Story.</h2>
+        
+        <div class="booking-minimal">
+            <form onsubmit="event.preventDefault(); alert('Request sent.');">
+                <div class="input-group">
+                    <label class="label">Who are you?</label>
+                    <input type="text" placeholder="name" required>
+                </div>
+                <div class="input-group">
+                    <label class="label">Where can I reach you?</label>
+                    <input type="email" placeholder="email address" required>
+                </div>
+                <div class="input-group">
+                    <label class="label">The Vision</label>
+                    <textarea placeholder="describe your piece" rows="1"></textarea>
+                </div>
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="padding: 5vh 5vw; border-top: 0.5px solid rgba(255, 253, 208, 0.1); display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+            <h2 class="huge-text" style="font-size: 3rem;">m.marston</h2>
+            <p class="label">Electric Tiger Tattoo / Delaware</p>
+        </div>
+        <div class="label">
+            <a href="https://instagram.com/dawgbedd" style="color: inherit; text-decoration: none; margin-right: 2rem;">IG</a>
+            <a href="mailto:mollee.marston@tattoomollee.com" style="color: inherit; text-decoration: none;">Email</a>
+        </div>
+    </footer>
+
     <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-        document.querySelectorAll('.analytics-booking').forEach(element => {
-            element.addEventListener('click', () => {
-                const clickType = element.getAttribute('data-analytics') || 'unknown';
-                window.va('event', { name: 'booking_click', data: { type: clickType } });
+        // Smooth drifting parallax
+        window.addEventListener('scroll', () => {
+            const panels = document.querySelectorAll('.parralax');
+            panels.forEach(panel => {
+                const speed = 0.1;
+                const rect = panel.getBoundingClientRect();
+                const scrollPos = window.scrollY;
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    panel.style.transform = `translateY(${(rect.top - window.innerHeight/2) * speed}px)`;
+                }
+            });
+
+            // Image reveals
+            const images = document.querySelectorAll('.img-container img');
+            images.forEach(img => {
+                const rect = img.parentElement.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    img.style.transform = `scale(1) translateY(${(rect.top) * 0.05}px)`;
+                }
             });
         });
     </script>
